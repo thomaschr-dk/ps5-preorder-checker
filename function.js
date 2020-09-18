@@ -4,7 +4,7 @@ const superagent = require("superagent");
 const moment = require("moment");
 const shops = require("./shops.config");
 
-(async () => {
+exports.scrape = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setUserAgent(process.env.PUPPETEER_USER_AGENT);
@@ -61,4 +61,4 @@ const shops = require("./shops.config");
   }
 
   await browser.close();
-})();
+};
